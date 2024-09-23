@@ -1,0 +1,64 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr auto;
+    grid-gap: 10px;
+    background-image: url('bg');
+}
+
+.header, .footer {
+    grid-column: 1 / -1;
+    background-color:#F8F9FA;
+    padding: 20px;
+    text-align: center;
+    font-size: 40px;
+    color: purple;
+    background-image: url(bg1);
+
+}
+
+@keyframes slideFade {
+    0% {
+        opacity: 0;
+        transform: translateY(-50px); /* Start 50px above */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* End at the normal position */
+    }
+}
+
+.grid-item {
+    background-color:#ECECEC;
+    border: 0.5px solid rgba(0, 0, 0, 0.8);
+    padding: 15px;
+    text-align: center;
+    font-size: 18px;
+    height: 300px; /* Fixed height */
+}
+
+.grid-item img {
+    width: 100%;  /* Make the image take up the full width of the grid item */
+    height: 100%; /* Fill the height of the grid item */
+    object-fit: cover; /* Ensures the image covers the grid item area */
+    
+}
+
+.grid-item:hover {
+    background-color: #9d51d4;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
